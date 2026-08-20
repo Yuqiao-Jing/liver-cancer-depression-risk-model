@@ -1,0 +1,13 @@
+.DS_Store
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local clinical data and model-development files are not part of deployment.
+data/
+code/Python机器学习建模与评估.py
+code/train_xgboost.py
+code/local-preview.png
+code/.streamlit/
+

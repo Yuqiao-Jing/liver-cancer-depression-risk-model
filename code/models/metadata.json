@@ -1,0 +1,147 @@
+{
+  "features": [
+    "Life_satisfaction",
+    "Self_perceived_health_status",
+    "Pain",
+    "Arthritis",
+    "Falldown",
+    "Gender",
+    "Kidney_disease",
+    "ADL_score",
+    "Sleep_time",
+    "Neutrophil_to_Lymphocyte_Ratio"
+  ],
+  "target": "Outcome",
+  "decision_threshold": 0.5,
+  "best_parameters": {
+    "learning_rate": 0.01,
+    "max_depth": 5,
+    "n_estimators": 200,
+    "subsample": 0.6
+  },
+  "cross_validation_auc": 0.8509990934990934,
+  "validation_metrics": {
+    "auc": 0.8698416394969726,
+    "accuracy": 0.7920792079207921,
+    "brier_score": 0.15034134685993195,
+    "sensitivity": 0.5752212389380531,
+    "specificity": 0.9210526315789473,
+    "samples": 303
+  },
+  "feature_specs": {
+    "Life_satisfaction": {
+      "default": 2.0,
+      "min": 1.0,
+      "max": 3.0,
+      "values": [
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    "Self_perceived_health_status": {
+      "default": 2.0,
+      "min": 1.0,
+      "max": 3.0,
+      "values": [
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    "Pain": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [
+        0.0,
+        1.0
+      ]
+    },
+    "Arthritis": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [
+        0.0,
+        1.0
+      ]
+    },
+    "Falldown": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [
+        0.0,
+        1.0
+      ]
+    },
+    "Gender": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [
+        0.0,
+        1.0
+      ]
+    },
+    "Kidney_disease": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [
+        0.0,
+        1.0
+      ]
+    },
+    "ADL_score": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 5.0,
+      "values": [
+        0.0,
+        1.5,
+        2.5,
+        5.0
+      ]
+    },
+    "Sleep_time": {
+      "default": 6.0,
+      "min": 4.0,
+      "max": 8.0,
+      "values": [
+        4.0,
+        5.0,
+        6.0,
+        7.0,
+        8.0
+      ]
+    },
+    "Neutrophil_to_Lymphocyte_Ratio": {
+      "default": 2.5,
+      "min": 1.4,
+      "max": 3.5,
+      "values": null
+    }
+  },
+  "feature_importance": {
+    "Life_satisfaction": 0.07014822214841843,
+    "Self_perceived_health_status": 0.10110874474048615,
+    "Pain": 0.07734473049640656,
+    "Arthritis": 0.12007962167263031,
+    "Falldown": 0.11206845194101334,
+    "Gender": 0.06043082848191261,
+    "Kidney_disease": 0.100613534450531,
+    "ADL_score": 0.23858197033405304,
+    "Sleep_time": 0.057911377400159836,
+    "Neutrophil_to_Lymphocyte_Ratio": 0.06171263009309769
+  },
+  "training_rows": 709,
+  "trained_at_utc": "2026-08-19T14:52:25.797994+00:00",
+  "library_versions": {
+    "xgboost": "3.2.0",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.3.3"
+  }
+}
