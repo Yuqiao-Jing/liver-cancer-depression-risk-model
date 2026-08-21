@@ -40,7 +40,7 @@ FEATURE_HELP = {
     "Falldown": "Binary code 0/1; use the same definition as the modeling data.",
     "Gender": "Binary code 0/1; the original material does not define the coding labels.",
     "Kidney_disease": "Binary code 0/1; use the same definition as the modeling data.",
-    "ADL_score": "Available values: 0, 1.5, 2.5, and 5.",
+    "ADL_score": "Available values: 0, 1, 2, 3, 4, 5, and 6.",
     "Sleep_time": "Unit: hours; the training-data range is 4–8.",
     "Neutrophil_to_Lymphocyte_Ratio": "The training-data range is 1.4–3.5.",
 }
