@@ -57,7 +57,6 @@ st.set_page_config(
 )
 
 
-@st.cache_resource
 def load_artifacts() -> tuple[PredictProbaSigmoidCalibrator, dict]:
     if not MODEL_PATH.exists() or not METADATA_PATH.exists():
         raise FileNotFoundError("The SVM model or metadata file is missing.")
@@ -269,7 +268,10 @@ def positive_probability(model, feature_names: list[str], data: np.ndarray) -> n
 def force_plot_html(model, metadata: dict, row: pd.DataFrame) -> str:
     """Create a responsive probability-scale SHAP force plot."""
     feature_names = metadata["features"]
-    baseline = np.asarray(metadata["shap_background"], dtype=float)
+    raw_background = metadata["shap_background"]
+    if isinstance(raw_background, dict):
+        raw_background = [[raw_background[feature] for feature in feature_names]]
+    baseline = np.asarray(raw_background, dtype=float)
     if baseline.ndim != 2 or baseline.shape[1] != len(feature_names):
         raise ValueError("The SHAP background does not match the model features.")
     explainer = shap.KernelExplainer(
