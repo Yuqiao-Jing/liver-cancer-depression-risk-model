@@ -269,10 +269,9 @@ def positive_probability(model, feature_names: list[str], data: np.ndarray) -> n
 def force_plot_html(model, metadata: dict, row: pd.DataFrame) -> str:
     """Create a responsive probability-scale SHAP force plot."""
     feature_names = metadata["features"]
-    baseline = np.asarray(
-        [[metadata["shap_background"][feature] for feature in feature_names]],
-        dtype=float,
-    )
+    baseline = np.asarray(metadata["shap_background"], dtype=float)
+    if baseline.ndim != 2 or baseline.shape[1] != len(feature_names):
+        raise ValueError("The SHAP background does not match the model features.")
     explainer = shap.KernelExplainer(
         lambda data: positive_probability(model, feature_names, data),
         baseline,
@@ -289,7 +288,7 @@ def force_plot_html(model, metadata: dict, row: pd.DataFrame) -> str:
         out_names="Predicted probability",
         link="identity",
         matplotlib=False,
-        contribution_threshold=0.05,
+        contribution_threshold=0.0,
     )
     return f"""
     <!doctype html>
@@ -300,15 +299,15 @@ def force_plot_html(model, metadata: dict, row: pd.DataFrame) -> str:
         <style>
           html, body {{ margin: 0; padding: 0; background: #ffffff; overflow: hidden; }}
           body {{ font-family: Arial, sans-serif; color: #17364a; }}
-          .force-title {{ font-size: 15px; font-weight: 700; margin: 2px 0 18px 4px; }}
-          .force-wrap {{ width: 100%; min-width: 0; overflow: hidden; padding-top: 4px; }}
+          .force-title {{ font-size: 15px; font-weight: 700; margin: 2px 0 24px 4px; }}
+          .force-wrap {{ width: 100%; min-width: 0; overflow: hidden; padding-top: 10px; }}
           .force-wrap svg .tick text {{ display: none !important; }}
           .force-wrap svg .tick line {{ opacity: 0.18 !important; }}
         </style>
       </head>
       <body>
         <div class="force-title">Feature Impact Force Plot</div>
-        <div class="force-wrap">{visualizer.html(label_margin=28)}</div>
+        <div class="force-wrap">{visualizer.html(label_margin=36)}</div>
       </body>
     </html>
     """
@@ -425,7 +424,7 @@ def main() -> None:
             st.iframe(
                 force_plot_html(model, metadata, ordered_row),
                 width="stretch",
-                height=250,
+                height=285,
             )
 
 

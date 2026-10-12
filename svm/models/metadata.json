@@ -41,13 +41,17 @@
       "values": [0.0, 1.0]
     }
   },
-  "shap_background": {
-    "Sleep_duration": 7.0,
-    "Pain": 0.0,
-    "Kidney_disease": 0.0,
-    "Digestive_disease": 0.0,
-    "Gender": 1.0
-  },
+  "shap_background_method": "Eight aggregate k-means centroids from the training feature matrix",
+  "shap_background": [
+    [7.5, 1.0, 0.0, 0.0, 1.0],
+    [6.0, 1.0, 1.0, 1.0, 1.0],
+    [8.0, 0.0, 0.0, 0.0, 0.0],
+    [7.0, 0.0, 0.0, 0.0, 0.0],
+    [7.5, 0.0, 0.0, 0.0, 1.0],
+    [6.0, 1.0, 0.0, 0.0, 0.0],
+    [6.5, 0.0, 0.0, 1.0, 1.0],
+    [7.5, 1.0, 0.0, 0.0, 0.0]
+  ],
   "training_rows": 214,
   "validation_metrics": {
     "samples": 91,
