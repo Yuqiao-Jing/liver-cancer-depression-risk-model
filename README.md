@@ -5,6 +5,11 @@ SVM models. Each interface accepts its model-aligned features, returns the
 estimated probability of depression, and displays an individual SHAP force
 plot.
 
+## Deployed apps
+
+- [XGBoost prediction app](https://liver-cancer-depression-risk-model.streamlit.app/)
+- [SVM prediction app](https://liver-cancer-depression-svm.streamlit.app/)
+
 ## XGBoost app
 
 ```bash
