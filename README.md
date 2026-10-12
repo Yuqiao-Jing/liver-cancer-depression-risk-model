@@ -1,15 +1,24 @@
 # Depression Risk Prediction in Patients with Liver Cancer
 
-Research-use Streamlit application powered by a trained XGBoost model. The
-interface accepts 10 model-aligned features, returns the estimated probability
-of depression, and displays a SHAP force plot for the individual prediction.
+Research-use Streamlit applications powered by trained XGBoost and calibrated
+SVM models. Each interface accepts its model-aligned features, returns the
+estimated probability of depression, and displays an individual SHAP force
+plot.
 
-## Run locally
+## XGBoost app
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install -r code/requirements.txt
 .venv/bin/streamlit run code/app.py
+```
+
+## SVM app
+
+```bash
+python3 -m venv .venv
+.venv/bin/python -m pip install -r svm/requirements.txt
+.venv/bin/streamlit run svm/app.py
 ```
 
 The deployment repository intentionally excludes clinical source data and

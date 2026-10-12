@@ -1,0 +1,70 @@
+{
+  "model_name": "Calibrated Support Vector Machine",
+  "features": [
+    "Sleep_duration",
+    "Pain",
+    "Kidney_disease",
+    "Digestive_disease",
+    "Gender"
+  ],
+  "target": "Outcome",
+  "decision_threshold": 0.5,
+  "feature_specs": {
+    "Sleep_duration": {
+      "default": 7.0,
+      "min": 5.0,
+      "max": 9.0,
+      "values": [5.0, 5.5, 6.0, 6.5, 7.0, 7.5, 8.0, 8.5, 9.0]
+    },
+    "Pain": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [0.0, 1.0]
+    },
+    "Kidney_disease": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [0.0, 1.0]
+    },
+    "Digestive_disease": {
+      "default": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [0.0, 1.0]
+    },
+    "Gender": {
+      "default": 1.0,
+      "min": 0.0,
+      "max": 1.0,
+      "values": [0.0, 1.0]
+    }
+  },
+  "shap_background": {
+    "Sleep_duration": 7.0,
+    "Pain": 0.0,
+    "Kidney_disease": 0.0,
+    "Digestive_disease": 0.0,
+    "Gender": 1.0
+  },
+  "training_rows": 214,
+  "validation_metrics": {
+    "samples": 91,
+    "auc": 0.9076967592592593,
+    "accuracy": 0.8241758241758241,
+    "brier_score": 0.11800935760644168
+  },
+  "model_parameters": {
+    "C": 0.1,
+    "kernel": "linear",
+    "gamma": "scale",
+    "degree": 2,
+    "probability": true,
+    "random_state": 123
+  },
+  "library_versions": {
+    "scikit_learn": "1.7.2"
+  }
+}
+
