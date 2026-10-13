@@ -8,7 +8,7 @@ plot.
 ## Deployed apps
 
 - [XGBoost prediction app](https://liver-cancer-depression-risk-model.streamlit.app/)
-- [SVM prediction app](https://liver-cancer-depression-svm.streamlit.app/)
+- [SVM prediction app](https://older-adult-liver-cancer-depression-svm.streamlit.app/)
 
 ## XGBoost app
 
